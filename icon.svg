@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5F6"/>
+      <stop offset="50%" stop-color="#FCE7EB"/>
+      <stop offset="100%" stop-color="#E8ECF0"/>
+    </linearGradient>
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F47291"/>
+      <stop offset="100%" stop-color="#D94E73"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7CA982"/>
+      <stop offset="100%" stop-color="#4B7751"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGrad)" stroke="#F47291" stroke-width="8" stroke-opacity="0.3"/>
+  
+  <!-- Outer glowing rings -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#7CA982" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+
+  <!-- Mother & Baby Silhouette Abstract Art -->
+  <!-- Mother head -->
+  <circle cx="230" cy="160" r="42" fill="#D94E73"/>
+  <!-- Mother embracing curve -->
+  <path d="M230 205 C170 215 130 270 135 340 C140 400 190 435 256 435 C310 435 370 405 385 340 C395 290 365 240 315 225 C295 218 280 230 270 245 C255 268 250 295 250 320" 
+        fill="none" stroke="#D94E73" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- Baby inside belly / womb -->
+  <circle cx="280" cy="320" r="28" fill="#F47291"/>
+  <path d="M272 345 C275 365 295 375 315 365 C325 358 328 345 320 335" 
+        fill="none" stroke="#F47291" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Protective leaf / wellness sprout -->
+  <path d="M345 130 C375 140 395 170 390 200 C360 200 335 170 345 130 Z" fill="url(#leafGrad)"/>
+  <path d="M345 130 C335 155 315 170 290 170 C295 145 320 135 345 130 Z" fill="url(#leafGrad)" opacity="0.8"/>
+
+  <!-- Sparkle of AI / Intelligence -->
+  <polygon points="180,120 186,135 201,141 186,147 180,162 174,147 159,141 174,135" fill="#E5A93C"/>
+  <polygon points="360,260 364,270 374,274 364,278 360,288 356,278 346,274 356,270" fill="#E5A93C"/>
+</svg>

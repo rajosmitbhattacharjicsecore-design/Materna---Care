@@ -1,0 +1,955 @@
+/* ==========================================================================
+   MATERNA AI 2.0 - UI COMPONENTS & WIDGETS
+   ========================================================================== */
+
+/* Grid Systems */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Stat Cards */
+.card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+}
+
+.card-stat small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-stat .val {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.1;
+  font-family: var(--font-display);
+}
+
+.card-stat .subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+/* Pills & Badges */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--surface-alt);
+  color: var(--text-muted);
+}
+
+.pill-success { background: var(--status-normal-bg); color: var(--status-normal); }
+.pill-warning { background: var(--status-attention-bg); color: var(--status-attention); }
+.pill-danger { background: var(--status-alert-bg); color: var(--status-alert); }
+.pill-info { background: var(--status-info-bg); color: var(--status-info); }
+.pill-primary { background: var(--primary-light); color: var(--primary); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+.btn-sage {
+  background-color: var(--sage);
+  color: #FFFFFF;
+  border-color: var(--sage);
+}
+.btn-sage:hover {
+  background-color: var(--sage-dark);
+}
+
+.btn-secondary {
+  background-color: var(--surface-alt);
+  color: var(--text-main);
+  border-color: var(--border);
+}
+.btn-secondary:hover {
+  background-color: var(--border);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-danger {
+  background-color: var(--status-alert);
+  color: #FFFFFF;
+}
+.btn-danger:hover {
+  background-color: #B91C1C;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  min-height: 36px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-lg);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Hero Journey Banner */
+.hero-banner {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #FFFFFF 60%, var(--sage-light) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .hero-banner {
+  background: linear-gradient(135deg, #2E1B24 0%, #1E212E 60%, #1A2820 100%);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--primary);
+}
+
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 580px;
+}
+
+/* Pregnancy Progress Ring */
+.progress-ring-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.progress-ring-svg {
+  transform: rotate(-90deg);
+  width: 120px;
+  height: 120px;
+}
+
+.progress-ring-bg {
+  stroke: var(--surface-alt);
+  stroke-width: 10;
+  fill: none;
+}
+
+.progress-ring-bar {
+  stroke: var(--primary);
+  stroke-width: 10;
+  stroke-linecap: round;
+  fill: none;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-ring-content {
+  position: absolute;
+  text-align: center;
+}
+
+.progress-ring-week {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.progress-ring-total {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Input Style Selector (Section 1 Feature #2) */
+.input-style-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .input-style-grid { grid-template-columns: 1fr; }
+}
+
+.style-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.style-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.style-card.highlight {
+  border-color: var(--primary);
+  background: linear-gradient(to bottom right, var(--primary-light), var(--card-bg));
+}
+
+.style-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.style-card.highlight .style-icon {
+  background: var(--primary);
+  color: #fff;
+}
+
+.style-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.style-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Quick Actions Carousel/Grid (Section 1 Feature #4) */
+.quick-actions-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.quick-action-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-main);
+}
+
+.quick-action-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.quick-action-btn .qa-icon {
+  font-size: 1.5rem;
+}
+
+.quick-action-btn span {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Water Tracker (Section 1 & 4) */
+.water-tracker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.water-visual-bar {
+  height: 12px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.water-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #60A5FA, #2563EB);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.water-glass-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.glass-btn {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+}
+.glass-btn:hover {
+  background: #DBEAFE;
+  transform: scale(1.03);
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+}
+
+.form-group .form-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Radio Pill Groups */
+.radio-pill-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-pill {
+  position: relative;
+}
+
+.radio-pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-pill label {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.radio-pill input[type="radio"]:checked + label {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+/* Nutrient Table */
+.nutrient-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.nutrient-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.nutrient-table th, .nutrient-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nutrient-table th {
+  background: var(--surface-alt);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.nutrient-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Meal Recommendations Cards */
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.meal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.meal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meal-title {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meal-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Medication Row */
+.med-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+.med-row:last-child {
+  border-bottom: none;
+}
+
+.med-info b {
+  display: block;
+  font-size: 0.95rem;
+}
+.med-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Asanas Cards */
+.asana-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.asana-badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* AI Assistant Chat UI (Section 3) */
+.chat-window {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--card-bg));
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-bot-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chat-bot-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-msg {
+  max-width: 82%;
+  padding: 0.9rem 1.15rem;
+  border-radius: 18px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  animation: fadeIn 0.2s ease-out;
+  position: relative;
+}
+
+.chat-msg-bot {
+  align-self: flex-start;
+  background: var(--surface-alt);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.chat-msg-user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg .time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 0.35rem;
+  display: block;
+  text-align: right;
+}
+
+/* Extracted Confirmation Card in Chat */
+.extracted-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--sage);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+}
+
+.extracted-title {
+  color: var(--sage);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.extracted-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Prompt Chips */
+.prompt-chips {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--border);
+  background: var(--surface-alt);
+  scrollbar-width: none;
+}
+.prompt-chips::-webkit-scrollbar { display: none; }
+
+.chip {
+  padding: 0.35rem 0.85rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-main);
+}
+.chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.chat-input-area {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--surface-alt);
+  color: var(--text-main);
+  outline: none;
+}
+.chat-input:focus {
+  border-color: var(--primary);
+  background: var(--card-bg);
+}
+
+/* Voice Dictation Button */
+.mic-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  transition: var(--transition);
+}
+.mic-btn.recording {
+  background: var(--status-alert);
+  color: #fff;
+  border-color: var(--status-alert);
+  animation: pulse-sos 1.2s infinite;
+}
+
+/* Floating AI Chat Trigger on Mobile */
+.floating-chat-trigger {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.45);
+  cursor: pointer;
+  z-index: 95;
+  transition: var(--transition);
+}
+.floating-chat-trigger:hover {
+  transform: scale(1.08);
+}
+@media (min-width: 901px) {
+  .floating-chat-trigger { display: none; }
+}
+
+/* Modal Dialogs */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  place-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+.modal-overlay.active {
+  display: grid;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--surface-alt);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Emergency Red-Flag Banner / Card */
+.emergency-redflag-card {
+  background: #FEF2F2;
+  border: 2px solid #F87171;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  color: #991B1B;
+  margin-bottom: 1.25rem;
+}
+[data-theme="dark"] .emergency-redflag-card {
+  background: #3B1618;
+  border-color: #EF4444;
+  color: #FCA5A5;
+}
+
+/* 4-7-8 Breathing Circle Widget */
+.breathing-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.breathing-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--primary-light), var(--sage-light));
+  border: 4px solid var(--sage);
+  display: grid;
+  place-items: center;
+  margin: 1.5rem auto;
+  transition: transform 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.breathing-circle.inhale {
+  transform: scale(1.4);
+}
+.breathing-circle.hold {
+  transform: scale(1.4);
+  border-color: var(--primary);
+}
+.breathing-circle.exhale {
+  transform: scale(0.9);
+}
+
+.breathing-instruction {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .toast-container {
+    bottom: 74px;
+    left: 16px;
+    right: 16px;
+  }
+}
+
+.toast {
+  background: var(--text-main);
+  color: var(--text-inverse);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  pointer-events: auto;
+  animation: slideToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toast-undo-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: inherit;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 28px;
+}
+
+@keyframes slideToast {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Materna AI 2.0 - Maternal Wellness Companion",
+  "short_name": "Materna AI",
+  "description": "Smart, empathetic, responsive pregnancy wellness and health tracker with AI companion",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FBF8F3",
+  "theme_color": "#D94E73",
+  "categories": ["health", "medical", "lifestyle"],
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/favicon.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml"
+    }
+  ]
+}
